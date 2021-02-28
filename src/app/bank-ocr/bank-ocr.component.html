@@ -1,1 +1,22 @@
-<p>bank-ocr works!</p>
+<div class="content" role="main">
+  <h1>Bank OCR</h1>
+  <div class="bank-ocr" [formGroup]="form">
+    <p>
+      As presented in
+      <a href="https://codingdojo.org/kata/BankOCR/" target="_blank">
+        this kata.
+      </a>
+    </p>
+    <p>
+      You may change the input to test this Dojo. When you are ready to test,
+      press the Test button.
+    </p>
+    <textarea formControlName="ocrInput" rows="12" cols="27"> </textarea>
+    <button (click)="test()">Test</button>
+
+    <div class="results" *ngIf="accountNumbersPrint">
+      <h3>Results of test:</h3>
+      <div [innerHTML]="accountNumbersPrint"></div>
+    </div>
+  </div>
+</div>
