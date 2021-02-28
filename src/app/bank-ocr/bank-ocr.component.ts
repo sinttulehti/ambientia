@@ -23,7 +23,7 @@ export class BankOcrComponent implements OnInit {
           '|_ |_ |_| _|  |  ||_||_||_ \n' +
           '|_||_|  | _|  |  |  | _| _|\n' +
           '                           \n' +
-          '    _  _  _  _  _  _  _  _ \n' +
+          '    _  _  _  _  _  _     _ \n' +
           '|_||_   ||_ | ||_|| || || |\n' +
           '  | _|  | _||_||_||_||_||_|\n' +
           '                            ',
@@ -87,7 +87,7 @@ export class BankOcrComponent implements OnInit {
       let checkSumMultiplier = 10;
       let accountNumberCheckSum = 0;
       let checkSumError = '';
-      for (let [index, cipher] of accountNumber.entries()) {
+      for (let cipher of accountNumber) {
         let decipheredNumber = ciphers.indexOf(cipher);
         if (decipheredNumber < 0) {
           accountNumberString += '?';
