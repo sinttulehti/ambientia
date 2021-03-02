@@ -97,7 +97,7 @@ export class BankOcrComponent implements OnInit {
         accountNumberString += decipheredNumber;
         accountNumberCheckSum += --checkSumMultiplier * decipheredNumber;
       }
-      if (accountNumberCheckSum % 11 !== 0) {
+      if (!checkSumError && accountNumberCheckSum % 11 !== 0) {
         checkSumError = 'ERR';
       }
       this.accountNumbersPrint +=
